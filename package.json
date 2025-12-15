@@ -3,6 +3,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "promise": "^8.3.0"
+    "gamesense-client": "github:Justin-Gr/gamesense-client#screen-support-fixes"
   }
 }

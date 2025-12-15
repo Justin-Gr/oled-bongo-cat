@@ -26,7 +26,7 @@ const IDLE_TIMEOUT_DURATION = 1000;
 //========== GAMESENSE SETUP ==========
 
 /** @type {any} */
-const gamesense = require('./gamesense-client-copy');
+const gamesense = require('gamesense-client');
 
 const endpoint = new gamesense.ServerEndpoint();
 endpoint.discoverUrl();
@@ -136,6 +136,7 @@ async function gracefulShutdown() {
 
 	try {
 		client.stopHeartbeatSending();
+		await client.stopGame();
 		await client.removeGame();
 		console.log('Successfully removed OLED Bongo Cat');
 	}
